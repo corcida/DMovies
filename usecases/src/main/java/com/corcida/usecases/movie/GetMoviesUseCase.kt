@@ -10,23 +10,27 @@ import kotlinx.coroutines.flow.flow
 class GetMoviesUseCase(
     private val repository: MovieRepository
 ) {
-
     fun execute(
-        type: MovieType
+        type: MovieType,
+        isDataRestored: Boolean
     ): Flow<DataState<List<Movie>>> = flow {
         try {
-            emit(DataState.loading())
-            try {
-                val movies = repository.getRecipesFromServer(type)
-                repository.saveMovies(movies)
-            } catch (e: Exception){
-                e.printStackTrace()
-            }
-
-            if (repository.isDatabaseEmpty(type))
-                emit(DataState.error("There is no data"))
-            else
+            if (isDataRestored && !repository.isDatabaseEmpty(type))
                 emit(DataState.success(repository.getMoviesFromDatabase(type)))
+            else {
+                emit(DataState.loading())
+                try {
+                    val movies = repository.getRecipesFromServer(type)
+                    repository.saveMovies(movies)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+
+                if (repository.isDatabaseEmpty(type))
+                    emit(DataState.error("There is no data"))
+                else
+                    emit(DataState.success(repository.getMoviesFromDatabase(type)))
+            }
 
         } catch (e: Exception) {
             emit(DataState.error(e.message ?: "Unknown Error"))

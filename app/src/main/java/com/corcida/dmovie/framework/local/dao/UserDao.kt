@@ -13,11 +13,11 @@ interface UserDao {
     fun findUser(): UserEntity
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertUser(user: UserEntity)
+    fun insertUser(user: UserEntity)
 
     @Query("SELECT COUNT(id) FROM user")
     fun userCount(): Int
 
     @Query("DELETE FROM user")
-    suspend fun deleteAll()
+    fun deleteAll()
 }

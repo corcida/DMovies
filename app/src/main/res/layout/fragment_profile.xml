@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.notifications.NotificationsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="invisible"
+        android:id="@+id/profile_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            style="@style/titleStyle"
+            android:id="@+id/name"
+            tools:text="@string/popular"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@id/profile_pic"
+            app:layout_constraintTop_toTopOf="@id/profile_pic" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/profile_pic"
+            app:layout_constraintTop_toTopOf="@id/profile_pic">
+
+            <TextView
+                style="@style/labelStyle"
+                android:text="@string/popularity"
+                android:layout_marginStart="0dp"
+                app:layout_constraintStart_toEndOf="@id/profile_pic"
+                app:layout_constraintTop_toTopOf="@id/profile_pic" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/secondary_rounded_layout" >
+
+                <TextView
+                    android:id="@+id/popularity"
+                    style="@style/labelStyle"
+                    tools:text="145.4"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:textColor="?colorOnSecondary"
+                    app:layout_constraintStart_toEndOf="@id/profile_pic"
+                    app:layout_constraintTop_toTopOf="@id/profile_pic" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/user_loading"
+        layout="@layout/node_user_loading" />
+
+    <TextView
+        android:id="@+id/known_for_title"
+        style="@style/titleStyle"
+        android:text="@string/known_for"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_information" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/known_for"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:itemCount="1"
+        tools:listitem="@layout/node_movie"
+        android:layout_marginVertical="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/known_for_title"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

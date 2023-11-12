@@ -13,7 +13,7 @@ interface MovieDao {
     fun findMovies(type: String): List<MovieEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMovies(movies: List<MovieEntity>)
+    fun insertMovies(movies: List<MovieEntity>)
 
     @Query("SELECT COUNT(id) FROM movie WHERE type = :type")
     fun moviesCount(type: String): Int

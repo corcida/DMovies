@@ -11,7 +11,7 @@ class UserConverters {
     @TypeConverter
     fun stringToMovies(json: String?): List<Movie>? {
         val gson = Gson()
-        val type: Type = object : TypeToken<Movie?>() {}.type
+        val type: Type = object : TypeToken<List<Movie>?>() {}.type
         return gson.fromJson<List<Movie>>(json, type)
     }
 

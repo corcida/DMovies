@@ -15,12 +15,15 @@ class GetUserUseCase (
             emit(DataState.loading())
             try {
                 val user = repository.getUserFromServer()
-                if (user.id != repository.getUserFromDatabase().id)
+                if (!repository.isDatabaseEmpty() && user.id != repository.getUserFromDatabase().id)
                     repository.deleteUserFromDatabase()
                 repository.saveUser(user)
             } catch (e: Exception){
                 e.printStackTrace()
             }
+
+            println("user ${repository.getUserFromDatabase()}")
+            println("count ${repository.isDatabaseEmpty()}")
 
             if (repository.isDatabaseEmpty())
                 emit(DataState.error("There is no data"))
