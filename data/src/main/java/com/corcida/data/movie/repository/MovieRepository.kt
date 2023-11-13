@@ -15,7 +15,7 @@ class MovieRepository (
 
     suspend fun getMoviesFromDatabase(type: MovieType) = localDataSource.getMovies(type.value)
 
-    suspend fun getRecipesFromServer(type: MovieType): List<Movie>{
+    suspend fun getMoviesFromServer(type: MovieType): List<Movie>{
         return when (type){
             MovieType.TOP_RATED -> remoteDataSource.getTopRatedMovies()
             MovieType.POPULAR -> remoteDataSource.getPopularMovies()

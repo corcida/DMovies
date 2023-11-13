@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">DMovie</string>
+    <string name="channel_name">DMovie Notification Channel</string>
+    <string name="channel_description">DMovie Notification Channel</string>
     <string name="title_home">Home</string>
     <string name="title_movies">Películas</string>
     <string name="title_profile">Perfil</string>
@@ -13,4 +15,5 @@
     <string name="known_for">Trabajos destacados</string>
     <string name="ok">Ok</string>
     <string name="no_data_error">Actualmente no tienes data. Comprueba tu conexión a internet e intenta de nuevo.</string>
+    <string name="locations">Localizaciones</string>
 </resources>

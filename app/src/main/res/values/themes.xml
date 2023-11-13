@@ -14,5 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="background">@color/white</item>
         <item name="colorOnBackground">@color/black</item>
+        <item name="colorTertiary">@color/gray_variant</item>
+        <item name="colorOnTertiary">@color/black</item>
     </style>
 </resources>

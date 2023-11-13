@@ -20,7 +20,7 @@ class GetMoviesUseCase(
             else {
                 emit(DataState.loading())
                 try {
-                    val movies = repository.getRecipesFromServer(type)
+                    val movies = repository.getMoviesFromServer(type)
                     repository.saveMovies(movies)
                 } catch (e: Exception) {
                     e.printStackTrace()

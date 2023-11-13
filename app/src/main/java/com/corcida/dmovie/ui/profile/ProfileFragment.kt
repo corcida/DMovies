@@ -1,7 +1,6 @@
 package com.corcida.dmovie.ui.profile
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.corcida.dmovie.databinding.FragmentProfileBinding
 import com.corcida.dmovie.ui.common.NoDataDialogFragment
 import com.corcida.dmovie.ui.common.adapter.MoviesAdapter
-import com.corcida.dmovie.ui.common.loadUrl
 import com.corcida.dmovie.ui.common.loadUrlWithCircleCrop
 import com.corcida.dmovie.ui.profile.ProfileUiModel.Content
 import com.corcida.dmovie.ui.profile.ProfileUiModel.Error

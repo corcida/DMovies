@@ -12,7 +12,6 @@ class MoviesViewHolder(view: View): RecyclerView.ViewHolder(view) {
     private val binding = NodeMovieBinding.bind(view)
 
     fun render(movie: Movie?) {
-        Log.e("loading", "movie data $movie")
         movie?.let {
             binding.photo.loadUrl(it.image)
             binding.label.text = it.title
