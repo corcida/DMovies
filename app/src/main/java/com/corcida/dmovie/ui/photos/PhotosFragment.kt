@@ -1,8 +1,5 @@
 package com.corcida.dmovie.ui.photos
 
-import android.app.Activity
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,8 +16,6 @@ import com.corcida.dmovie.ui.photos.PhotosUiModel.Content
 import com.corcida.dmovie.ui.photos.PhotosUiModel.Error
 import com.corcida.dmovie.ui.photos.PhotosUiModel.Loading
 import dagger.hilt.android.AndroidEntryPoint
-import java.net.URI
-
 
 @AndroidEntryPoint
 class PhotosFragment : Fragment() {
@@ -34,10 +29,6 @@ class PhotosFragment : Fragment() {
     private val pickMultipleMedia =
         registerForActivityResult(ActivityResultContracts.PickMultipleVisualMedia(3)) { uris ->
             if (uris.isNotEmpty()) {
-                val javaUri = URI.create(uris.first().toString())
-                Log.e("uri", "URI $javaUri")
-                Log.e("uri", "uri original ${uris.get(0)}")
-                Log.e("uri", "uri new ${Uri.parse(javaUri.toString())}")
                 viewModel.saveNewFiles(uris)
             } else {
                 Log.e("uri", "empty")

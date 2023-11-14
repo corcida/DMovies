@@ -1,6 +1,5 @@
 package com.corcida.dmovie.framework.mappers
 
-import android.util.Log
 import com.corcida.dmovie.framework.local.entity.UserEntity
 import com.corcida.domain.Movie
 import com.corcida.domain.User

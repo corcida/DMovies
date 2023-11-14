@@ -1,5 +1,6 @@
 package com.corcida.dmovie.ui.main
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.corcida.dmovie.ui.common.ScopeViewModel
@@ -20,7 +21,7 @@ class MainViewModel @Inject constructor(
     private val _model = MutableLiveData<MainUiModel>()
     val model: LiveData<MainUiModel> get() = _model
     private val timer = Timer()
-    private val sendLocationsIsEnabled = false
+    private val sendLocationsIsEnabled = true
 
     init {
         initScope()
@@ -46,7 +47,8 @@ class MainViewModel @Inject constructor(
             }
 
             dataState.error?.let {
-                _model.value = MainUiModel.Error(it)
+                Log.e("error", "data $it")
+                _model.value = MainUiModel.Error("Error inesperado guardando localización")
             }
         }.launchIn(this)
     }

@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.corcida.dmovie.R
 import com.corcida.dmovie.ui.common.basicDiffUtil
-import com.corcida.domain.Movie
 
 class PhotosAdapter : RecyclerView.Adapter<PhotosViewHolder>() {
 

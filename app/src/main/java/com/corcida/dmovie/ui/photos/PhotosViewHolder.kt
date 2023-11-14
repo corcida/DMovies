@@ -4,7 +4,6 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.corcida.dmovie.databinding.NodePhotoBinding
 import com.corcida.dmovie.ui.common.loadFirebaseUrl
-import com.corcida.dmovie.ui.common.loadUrl
 
 class PhotosViewHolder(view: View): RecyclerView.ViewHolder(view) {
 

@@ -1,6 +1,5 @@
 package com.corcida.dmovie.ui.common
 
-import android.util.Log
 import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView

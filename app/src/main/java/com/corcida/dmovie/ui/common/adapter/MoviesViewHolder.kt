@@ -1,6 +1,5 @@
 package com.corcida.dmovie.ui.common.adapter
 
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.corcida.dmovie.databinding.NodeMovieBinding

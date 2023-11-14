@@ -2,14 +2,10 @@ package com.corcida.dmovie.util
 
 import android.app.Activity
 import com.karumi.dexter.Dexter
-import com.karumi.dexter.DexterBuilder.MultiPermissionListener
-import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
-import com.karumi.dexter.listener.multi.BaseMultiplePermissionsListener
-import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.karumi.dexter.listener.single.BasePermissionListener
 
 class PermissionRequester (private val activity: Activity, private val permission: String) {

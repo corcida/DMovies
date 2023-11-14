@@ -1,9 +1,7 @@
 package com.corcida.dmovie.ui.movies
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.corcida.dmovie.ui.common.ScopeViewModel
 import com.corcida.domain.MovieType
 import com.corcida.usecases.movie.GetMoviesUseCase

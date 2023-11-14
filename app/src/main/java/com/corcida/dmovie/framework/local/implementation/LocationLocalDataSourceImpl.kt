@@ -9,8 +9,8 @@ import com.corcida.dmovie.framework.mappers.toRoomLocation
 import com.corcida.domain.Location
 import com.google.android.gms.location.FusedLocationProviderClient
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlinx.coroutines.withContext
 import kotlin.coroutines.resume
 
 class LocationLocalDataSourceImpl(
@@ -24,7 +24,10 @@ class LocationLocalDataSourceImpl(
         suspendCancellableCoroutine { continuation ->
             fusedLocationClient.lastLocation
                 .addOnCompleteListener {
-                    continuation.resume(it.result.toDomainLocation(geocoder))
+                    if (it.isSuccessful && it.result != null)
+                        continuation.resume(it.result.toDomainLocation(geocoder))
+                    else
+                        continuation.cancel()
                 }
         }
     }

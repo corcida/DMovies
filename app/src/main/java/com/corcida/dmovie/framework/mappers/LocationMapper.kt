@@ -7,8 +7,8 @@ import com.corcida.domain.Location
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
-import com.corcida.dmovie.framework.remote.model.Location as ServiceLocation
 import android.location.Location as DeviceLocation
+import com.corcida.dmovie.framework.remote.model.Location as ServiceLocation
 
 fun Location.toRoomLocation() : LocationEntity =
     LocationEntity(0, latitude, longitude, address, date)

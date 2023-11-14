@@ -1,7 +1,6 @@
 package com.corcida.dmovie.di
 
 import android.app.Application
-import android.location.Geocoder
 import androidx.core.app.NotificationCompat
 import com.corcida.dmovie.R
 import com.corcida.dmovie.util.Constants

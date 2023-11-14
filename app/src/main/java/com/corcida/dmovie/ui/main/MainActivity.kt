@@ -10,14 +10,11 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.corcida.dmovie.R
 import com.corcida.dmovie.databinding.ActivityMainBinding
-import com.corcida.dmovie.ui.map.MapUiModel
-import com.corcida.dmovie.ui.map.MapViewModel
 import com.corcida.dmovie.util.PermissionRequester
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint

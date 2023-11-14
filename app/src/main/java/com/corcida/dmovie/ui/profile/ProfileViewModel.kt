@@ -2,10 +2,7 @@ package com.corcida.dmovie.ui.profile
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.corcida.dmovie.ui.common.ScopeViewModel
-import com.corcida.dmovie.ui.movies.MoviesUiModel
-import com.corcida.usecases.movie.GetMoviesUseCase
 import com.corcida.usecases.user.GetUserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn

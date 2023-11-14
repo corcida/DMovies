@@ -1,11 +1,8 @@
 package com.corcida.dmovie.ui.photos
 
 import android.net.Uri
-import android.util.Log
-import androidx.core.net.toFile
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.corcida.dmovie.framework.mappers.toUiModelLocation
 import com.corcida.dmovie.framework.mappers.toUiModelPhoto
 import com.corcida.dmovie.ui.common.ScopeViewModel
 import com.corcida.usecases.photo.GetPhotosUseCase
