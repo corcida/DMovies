@@ -1,6 +1,6 @@
 #Flujo general de la aplicación:
 
-https://github.com/corcida/DMovies/assets/21995913/5a7f2448-ee66-499f-ad43-169ae0bc3b30
+https://github.com/corcida/DMovies/assets/21995913/4a20f6e8-44ed-499c-9a3f-9597610fc8b4
 
 #Capturas de consola de Firestore:
 
