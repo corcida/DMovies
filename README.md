@@ -4,9 +4,9 @@ https://github.com/corcida/DMovies/assets/21995913/4a20f6e8-44ed-499c-9a3f-95976
 
 #Capturas de consola de Firestore:
 
-<img width="1424" alt="Captura de pantalla 2023-11-13 a la(s) 22 59 31" src="https://github.com/corcida/DMovies/assets/21995913/b6b0ed50-d8a8-4825-b4e4-0febbda8e033">
+<img width="1424" alt="Captura de pantalla 2023-11-13 a la(s) 22 59 31" src="https://github.com/corcida/DMovies/assets/21995913/db186156-79a5-4eba-bd3e-6221a098e898">
 
-<img width="1437" alt="Captura de pantalla 2023-11-13 a la(s) 22 59 14" src="https://github.com/corcida/DMovies/assets/21995913/8749f8b3-fc1c-4735-a3db-09217ac9f5a2">
+<img width="1437" alt="Captura de pantalla 2023-11-13 a la(s) 22 59 14" src="https://github.com/corcida/DMovies/assets/21995913/56fe97f3-2a50-4c69-acb9-6e8bc11de749">
 
 # Informmación general del proyecto:
 
