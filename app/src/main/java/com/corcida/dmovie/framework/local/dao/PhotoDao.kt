@@ -10,7 +10,7 @@ import com.corcida.dmovie.framework.local.entity.PhotoEntity
 interface PhotoDao {
 
     @Query("SELECT * FROM photo")
-    fun getLocations(): List<PhotoEntity>
+    fun getPhotos(): List<PhotoEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertPhotos(photos: List<PhotoEntity>)

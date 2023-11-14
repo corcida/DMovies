@@ -1,5 +1,6 @@
 package com.corcida.dmovie.framework.mappers
 
+import android.util.Log
 import com.corcida.dmovie.framework.local.entity.UserEntity
 import com.corcida.domain.Movie
 import com.corcida.domain.User
@@ -11,7 +12,15 @@ fun User.toRoomUser() : UserEntity =
 fun UserEntity.toDomainUser() : User =
     User(id, name, movies, image, popularity)
 
-fun ServiceUser.toDomainUser() : User =
-    User(id, name, movies.map { Movie(it.id, it.title, it.image, "") }, image, popularity)
+fun ServiceUser.toDomainUser() : User {
+    return User(id,
+        name,
+        if (movies.isNotEmpty())
+            movies.map { Movie(it.id, it.title?:it.name?:"Título", it.image, "") }
+        else listOf(),
+        image,
+        popularity)
+}
+
 
 

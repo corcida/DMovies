@@ -8,12 +8,14 @@ class LocationsViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     private val binding = NodeLocationsBinding.bind(view)
 
-    fun render(location: LocationUIModel?) {
+    fun render(location: LocationModel?) {
         location?.let {
             binding.shimmerViewContainer.stopShimmer()
             binding.informationLayout.visibility = View.VISIBLE
             binding.shimmerViewContainer.visibility = View.GONE
-            if (location.selected) binding.card.elevation = 5f else 0f
+            binding.card.cardElevation = if (location.selected)  12f else 0f
+            binding.locationDate.text = location.date
+            binding.locationTitle.text = location.address
         }?:run {
             binding.shimmerViewContainer.startShimmer()
         }

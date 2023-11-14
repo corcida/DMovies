@@ -16,20 +16,17 @@ class GetPhotosUseCase (
         try {
             if (isDataRestored && !repository.isDatabaseEmpty())
                 emit(DataState.success(repository.getPhotosFromDatabase()))
-
-            emit(DataState.loading())
-            try {
-                val photos = repository.getPhotosFromServer()
-                repository.deleteLocationsFromDatabase()
-                repository.savePhotosInDatabase(photos)
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-
-            if (repository.isDatabaseEmpty())
-                emit(DataState.error("There is no data"))
-            else
+            else {
+                emit(DataState.loading())
+                try {
+                    val photos = repository.getPhotosFromServer()
+                    repository.deleteLocationsFromDatabase()
+                    repository.savePhotosInDatabase(photos)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
                 emit(DataState.success(repository.getPhotosFromDatabase()))
+            }
 
         } catch (e: Exception) {
             emit(DataState.error(e.message ?: "Unknown Error"))

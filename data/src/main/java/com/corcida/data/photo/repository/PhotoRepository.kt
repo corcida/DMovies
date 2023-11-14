@@ -17,7 +17,7 @@ class PhotoRepository (
         localDataSource.savePhotos(photos)
     }
 
-    suspend fun savePhotonServer(fileName: String, filePath: String) {
+    suspend fun savePhotonServer(fileName: String, filePath: URI) {
         remoteDataSource.savePhoto(fileName, filePath)
     }
 

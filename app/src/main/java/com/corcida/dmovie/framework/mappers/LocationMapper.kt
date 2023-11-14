@@ -2,7 +2,7 @@ package com.corcida.dmovie.framework.mappers
 
 import android.location.Geocoder
 import com.corcida.dmovie.framework.local.entity.LocationEntity
-import com.corcida.dmovie.ui.map.LocationUIModel
+import com.corcida.dmovie.ui.map.LocationModel
 import com.corcida.domain.Location
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -16,8 +16,8 @@ fun Location.toRoomLocation() : LocationEntity =
 fun Location.toServiceLocation(device: String) : ServiceLocation =
     ServiceLocation(device, latitude, longitude, address, date)
 
-fun Location.toUiModelLocation(id: Int, selected: Boolean) : LocationUIModel =
-    LocationUIModel(id, selected, latitude, longitude, address, date)
+fun Location.toUiModelLocation(id: Int, selected: Boolean) : LocationModel =
+    LocationModel(id, selected, latitude, longitude, address, date)
 
 fun LocationEntity.toDomainLocation() : Location =
     Location(latitude, longitude, address, date)

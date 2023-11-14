@@ -21,10 +21,7 @@ class GetLastLocationsUseCase (
                 e.printStackTrace()
             }
 
-            if (repository.isDatabaseEmpty())
-                emit(DataState.error("There is no data"))
-            else
-                emit(DataState.success(repository.getLocationsFromDatabase()))
+            emit(DataState.success(repository.getLocationsFromDatabase()))
 
         } catch (e: Exception) {
             emit(DataState.error(e.message ?: "Unknown Error"))

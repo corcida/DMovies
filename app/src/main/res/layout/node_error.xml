@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/node_movie_height"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:showIn="@layout/fragment_movies">
+    android:gravity="center">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="@dimen/_50sdp"

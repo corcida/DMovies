@@ -10,8 +10,6 @@ import androidx.lifecycle.Observer
 import com.corcida.dmovie.R
 import com.corcida.dmovie.databinding.FragmentMapBinding
 import com.corcida.dmovie.ui.common.NoDataDialogFragment
-import com.corcida.dmovie.ui.movies.MoviesUiModel
-import com.corcida.dmovie.ui.movies.MoviesViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -69,8 +67,11 @@ class MapFragment : Fragment(), OnMapReadyCallback{
                 setLoading(false)
                 binding.refreshLayout.isRefreshing = false
                 binding.refreshLayout.isEnabled = true
-                locationsAdapter.locations = model.locations
-                model.locations.firstOrNull { it.selected }?.let { placeMarker(it) }
+                if (model.locations.isNotEmpty()) {
+                    locationsAdapter.locations = model.locations
+                    model.locations.firstOrNull { it.selected }?.let { placeMarker(it) }
+                }
+                setDataVisibility(model.locations.isNotEmpty())
             }
             is MapUiModel.Error -> {
                 binding.refreshLayout.isEnabled = true
@@ -90,12 +91,21 @@ class MapFragment : Fragment(), OnMapReadyCallback{
         binding.shimmerViewContainer.visibility = if (isLoading) View.VISIBLE else View.INVISIBLE
     }
 
-    private fun placeMarker(location: LocationUIModel){
+    private fun setDataVisibility(isDataVisible : Boolean){
+        binding.locations.visibility = if (isDataVisible) View.VISIBLE else View.GONE
+        binding.locationsError.root.visibility = if (!isDataVisible) View.VISIBLE else View.GONE
+    }
+
+    private fun placeMarker(location: LocationModel){
         val place = LatLng(location.latitude, location.longitude)
-        map.addMarker(MarkerOptions()
-            .position(place)
-            .title(location.address))
-        map.moveCamera(CameraUpdateFactory.newLatLng(place))
+        if (this::map.isInitialized) {
+            map.addMarker(
+                MarkerOptions()
+                    .position(place)
+                    .title(location.address)
+            )
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(place, 10f))
+        }
     }
 
     override fun onDestroyView() {

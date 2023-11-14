@@ -1,6 +1,6 @@
 package com.corcida.dmovie.ui.map
 
-data class LocationUIModel(
+data class LocationModel(
     val id: Int,
     var selected: Boolean,
     val latitude: Double,

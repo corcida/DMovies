@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="?attr/actionBarSize"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -76,11 +77,24 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/locations"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 tools:itemCount="5"
                 tools:listitem="@layout/node_locations"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_marginVertical="@dimen/_10sdp"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/location_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <include
+                android:visibility="gone"
+                android:id="@+id/locations_error"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                layout="@layout/node_error"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/location_title"
                 />
 

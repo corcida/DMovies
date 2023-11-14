@@ -16,5 +16,16 @@ data class User(
     val image: String,
     val popularity: Float,
     @SerializedName("known_for")
-    val movies: List<Movie>
+    val movies: List<UserMovie>
 ): Parcelable
+
+@Parcelize
+data class UserMovie(
+    val id: Int,
+    val title: String?,
+    val name: String?,
+    @SerializedName("poster_path")
+    val image: String
+): Parcelable
+
+

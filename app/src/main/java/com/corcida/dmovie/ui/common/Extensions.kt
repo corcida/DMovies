@@ -15,6 +15,10 @@ fun ImageView.loadUrl(path: String) {
 fun ImageView.loadUrlWithCircleCrop(path: String) {
     Glide.with(context).load(Constants.imageUrl + path).circleCrop().into(this)
 }
+
+fun ImageView.loadFirebaseUrl(path: String) {
+    Glide.with(context).load(path).into(this)
+}
 inline fun <VH : RecyclerView.ViewHolder, T> RecyclerView.Adapter<VH>.basicDiffUtil(
     initialValue: List<T>,
     crossinline areItemsTheSame: (T, T) -> Boolean = { old, new -> old == new },

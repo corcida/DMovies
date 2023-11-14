@@ -23,9 +23,9 @@ class PhotoRemoteDataSourceImpl (
         }
         photos
     }
-    override suspend fun savePhoto(fileName: String, filePath: String): Unit = withContext(Dispatchers.IO) {
+    override suspend fun savePhoto(fileName: String, filePath: URI): Unit = withContext(Dispatchers.IO) {
         val fileRef = reference.child(fileName)
-        val uploadTask = fileRef.putFile(Uri.fromFile(File(filePath)))
+        val uploadTask = fileRef.putFile(Uri.parse(filePath.toString()))
         uploadTask.await()
     }
 

@@ -5,7 +5,7 @@ import com.corcida.domain.Photo
 
 interface PhotoLocalDataSource {
     suspend fun getPhotos(): List<Photo>
-    suspend fun savePhotos(locations: List<Photo>)
+    suspend fun savePhotos(photos: List<Photo>)
 
     suspend fun deletePhotos()
 

@@ -17,4 +17,9 @@
         <item name="colorTertiary">@color/gray_variant</item>
         <item name="colorOnTertiary">@color/black</item>
     </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DMovie" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
 </resources>

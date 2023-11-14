@@ -4,17 +4,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.corcida.dmovie.R
-import com.corcida.dmovie.ui.common.adapter.MoviesViewHolder
 import com.corcida.dmovie.ui.common.basicDiffUtil
-import com.corcida.domain.Movie
 
 class LocationsAdapter(
-    private val listener: (LocationUIModel) -> Unit
+    private val listener: (LocationModel) -> Unit
 ) : RecyclerView.Adapter<LocationsViewHolder>() {
 
-    var locations: List<LocationUIModel?> by basicDiffUtil(
+    var locations: List<LocationModel?> by basicDiffUtil(
         listOf(null, null, null),
-        areItemsTheSame = { old, new -> old?.id == new?.id }
+        areItemsTheSame = { old, new -> old?.id == new?.id },
+        areContentsTheSame = { old, new -> old?.selected == new?.selected }
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LocationsViewHolder {

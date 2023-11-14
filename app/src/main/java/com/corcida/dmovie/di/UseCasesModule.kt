@@ -35,6 +35,11 @@ class UseCasesModule {
     ) = FindLastLocationUseCase(repository)
 
     @Provides
+    fun getLastLocationsUseCaseProvider(
+        repository: LocationRepository
+    ) = GetLastLocationsUseCase(repository)
+
+    @Provides
     fun getPhotosUseCaseProvider(
         repository: PhotoRepository
     ) = GetPhotosUseCase(repository)
