@@ -1,8 +1,8 @@
-#Flujo general de la aplicación:
+# Flujo general de la aplicación:
 
 https://github.com/corcida/DMovies/assets/21995913/4a20f6e8-44ed-499c-9a3f-9597610fc8b4
 
-#Capturas de consola de Firestore:
+# Capturas de consola de Firestore:
 
 <img width="1424" alt="Captura de pantalla 2023-11-13 a la(s) 22 59 31" src="https://github.com/corcida/DMovies/assets/21995913/db186156-79a5-4eba-bd3e-6221a098e898">
 
